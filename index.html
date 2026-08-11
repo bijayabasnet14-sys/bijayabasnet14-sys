@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bijaya Basnet — Data Analyst</title>
+<meta name="description" content="Data analyst with a physics and mathematics background. SQL, Python, Power BI, Tableau. Topeka, Kansas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --field:      #E7EBEF;
+    --field-deep: #D5DBE2;
+    --ink:        #0E141B;
+    --muted:      #5A6672;
+    --rule:       #BFC8D2;
+    --hene:       #B7242C;
+    --paper:      #F5F7F9;
+
+    --display: "IBM Plex Sans Condensed", system-ui, sans-serif;
+    --body:    "IBM Plex Sans", system-ui, sans-serif;
+    --mono:    "IBM Plex Mono", ui-monospace, monospace;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    background:var(--field);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{ width:min(1080px, 92vw); margin-inline:auto; }
+
+  /* ---------- eyebrow label ---------- */
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:.7rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--muted);
+    display:flex;
+    align-items:center;
+    gap:.75rem;
+  }
+  .eyebrow::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:var(--rule);
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    min-height:88vh;
+    display:flex;
+    align-items:flex-end;
+    padding-block:6rem 3.5rem;
+    overflow:hidden;
+    border-bottom:1px solid var(--rule);
+  }
+  #fringe{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    opacity:.42;
+    z-index:0;
+  }
+  .hero .wrap{ position:relative; z-index:1; }
+
+  .hero-tag{
+    font-family:var(--mono);
+    font-size:.7rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--hene);
+    margin-bottom:1.75rem;
+  }
+
+  .name{
+    font-family:var(--display);
+    font-weight:700;
+    font-size:clamp(3.2rem, 12vw, 8.5rem);
+    line-height:.88;
+    letter-spacing:-.02em;
+    text-transform:uppercase;
+  }
+  .name span{ display:block; }
+  .name .surname{ color:var(--hene); }
+
+  .thesis{
+    margin-top:2rem;
+    max-width:34ch;
+    font-size:clamp(1.05rem, 2.4vw, 1.3rem);
+    line-height:1.5;
+    color:var(--ink);
+  }
+
+  .locus{
+    margin-top:2.5rem;
+    font-family:var(--mono);
+    font-size:.75rem;
+    color:var(--muted);
+    display:flex;
+    flex-wrap:wrap;
+    gap:.4rem 1.5rem;
+  }
+
+  /* ---------- generic section ---------- */
+  .band{ padding-block:5.5rem; border-bottom:1px solid var(--rule); }
+  .band.alt{ background:var(--paper); }
+
+  .band h2{
+    font-family:var(--display);
+    font-weight:600;
+    font-size:clamp(1.8rem, 5vw, 2.8rem);
+    line-height:1.05;
+    letter-spacing:-.01em;
+    text-transform:uppercase;
+    margin-block:1.5rem 2.5rem;
+  }
+
+  .lede{ max-width:60ch; color:var(--muted); font-size:1.05rem; }
+
+  /* ---------- timeline ---------- */
+  .track{ display:grid; gap:0; }
+
+  .entry{
+    display:grid;
+    grid-template-columns:8.5rem 1fr;
+    gap:2rem;
+    padding-block:2rem;
+    border-top:1px solid var(--rule);
+    align-items:start;
+  }
+  .entry:first-child{ border-top:none; }
+
+  .entry .when{
+    font-family:var(--mono);
+    font-size:.78rem;
+    color:var(--muted);
+    padding-top:.35rem;
+    white-space:nowrap;
+  }
+  .entry h3{
+    font-family:var(--display);
+    font-weight:600;
+    font-size:1.3rem;
+    letter-spacing:.005em;
+  }
+  .entry .org{
+    font-family:var(--mono);
+    font-size:.78rem;
+    color:var(--hene);
+    margin-top:.3rem;
+  }
+  .entry p{ margin-top:.85rem; color:var(--muted); max-width:60ch; }
+
+  /* ---------- instrument panel (skills) ---------- */
+  .panel{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));
+    gap:1px;
+    background:var(--rule);
+    border:1px solid var(--rule);
+  }
+  .cell{ background:var(--field); padding:1.75rem 1.5rem; }
+  .band.alt .cell{ background:var(--paper); }
+
+  .cell h4{
+    font-family:var(--mono);
+    font-size:.7rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-bottom:1rem;
+  }
+  .cell ul{ list-style:none; }
+  .cell li{
+    font-family:var(--display);
+    font-weight:500;
+    font-size:1.05rem;
+    padding-block:.28rem;
+  }
+
+  /* ---------- certifications ---------- */
+  .certs{ display:grid; gap:1px; background:var(--rule); border:1px solid var(--rule); }
+  .cert{
+    background:var(--field);
+    padding:1.4rem 1.5rem;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    gap:.5rem 1.5rem;
+    align-items:baseline;
+  }
+  .cert .title{ font-family:var(--display); font-weight:600; font-size:1.05rem; }
+  .cert .issuer{ font-family:var(--mono); font-size:.75rem; color:var(--muted); }
+
+  /* ---------- contact ---------- */
+  .contact{ padding-block:5.5rem 4rem; }
+  .contact h2{ margin-bottom:2rem; }
+  .links{ display:flex; flex-wrap:wrap; gap:1rem 2.5rem; }
+  .links a{
+    font-family:var(--display);
+    font-weight:600;
+    font-size:clamp(1.1rem, 3vw, 1.6rem);
+    color:var(--ink);
+    text-decoration:none;
+    border-bottom:2px solid var(--rule);
+    padding-bottom:.15rem;
+    transition:border-color .18s ease, color .18s ease;
+  }
+  .links a:hover,
+  .links a:focus-visible{ color:var(--hene); border-color:var(--hene); }
+
+  footer{
+    padding-block:2rem 3rem;
+    font-family:var(--mono);
+    font-size:.72rem;
+    color:var(--muted);
+    border-top:1px solid var(--rule);
+  }
+
+  :focus-visible{ outline:2px solid var(--hene); outline-offset:3px; }
+
+  @media (max-width:640px){
+    .entry{ grid-template-columns:1fr; gap:.5rem; }
+    .entry .when{ padding-top:0; }
+    .hero{ min-height:80vh; padding-block:5rem 3rem; }
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    html{ scroll-behavior:auto; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <canvas id="fringe" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <p class="hero-tag">Data Analyst · Topeka, Kansas</p>
+    <h1 class="name">
+      <span>Bijaya</span>
+      <span class="surname">Basnet</span>
+    </h1>
+    <p class="thesis">
+      Physics taught me to be careful with a measurement. Two years as a data
+      analyst taught me to make it useful to people who never read the method.
+    </p>
+    <p class="locus">
+      <span>SQL</span><span>Python</span><span>Power BI</span>
+      <span>Tableau</span><span>Statistical analysis</span>
+    </p>
+  </div>
+</header>
+
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Currently</p>
+    <h2>Finishing an M.S. and looking for the next analysis problem</h2>
+    <p class="lede">
+      I'm completing a Master's in Technology Management (Engineering Operations)
+      at Avila University, after a Bachelor's in Physics with a mathematics minor
+      at Washburn. In between: three years in an optics research lab and two years
+      analyzing data for a software company. I'm open to data analyst and BI
+      analyst roles, on-site or remote.
+    </p>
+  </div>
+</section>
+
+<section class="band alt">
+  <div class="wrap">
+    <p class="eyebrow">Record</p>
+    <h2>Where the work has been</h2>
+    <div class="track">
+
+      <article class="entry">
+        <div class="when">2024 — 2026</div>
+        <div>
+          <h3>M.S. Technology Management</h3>
+          <p class="org">Avila University · Engineering Operations</p>
+          <p>
+            Graduate study in engineering operations, process improvement, and the
+            management side of technical work.
+          </p>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="when">2022 — 2024</div>
+        <div>
+          <h3>Data Analyst</h3>
+          <p class="org">Intellesoft Systems · Remote</p>
+          <p>
+            Data-driven projects supporting business and operational decisions.
+            Statistical analysis, Power BI reporting, and translating findings for
+            non-technical stakeholders.
+          </p>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="when">2019 — 2022</div>
+        <div>
+          <h3>Research Assistant</h3>
+          <p class="org">Rossi Biophotonics Lab · Topeka, Kansas</p>
+          <p>
+            Biomedical imaging research using optical microscopy. Data collection,
+            image analysis, and the kind of measurement discipline that carries
+            directly into analytics work.
+          </p>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="when">2017 — 2021</div>
+        <div>
+          <h3>B.S. Physics, Mathematics minor</h3>
+          <p class="org">Washburn University</p>
+          <p>
+            Physics degree with a mathematics minor. Alongside it, tutored college
+            mathematics through Calculus I and Applied Calculus at the Writing and
+            Tutoring Centre and Mabee Library.
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Instrument</p>
+    <h2>Digital Fourier holographic microscope</h2>
+    <p class="lede">
+      An ongoing project at Washburn University: designing and building a digital
+      Fourier holographic microscope for imaging, observation, and holographic
+      reconstruction. Optical alignment, image capture, and the analysis of what
+      comes off the sensor — a physics problem and a data problem at the same time.
+    </p>
+  </div>
+</section>
+
+<section class="band alt">
+  <div class="wrap">
+    <p class="eyebrow">Toolkit</p>
+    <h2>What I work with</h2>
+    <div class="panel">
+      <div class="cell">
+        <h4>Query &amp; Code</h4>
+        <ul>
+          <li>SQL</li>
+          <li>Python</li>
+          <li>pandas · NumPy</li>
+        </ul>
+      </div>
+      <div class="cell">
+        <h4>Visualization</h4>
+        <ul>
+          <li>Power BI</li>
+          <li>Tableau</li>
+          <li>Excel · IBM Cognos</li>
+        </ul>
+      </div>
+      <div class="cell">
+        <h4>Analysis</h4>
+        <ul>
+          <li>Statistical analysis</li>
+          <li>Data cleaning</li>
+          <li>Process improvement</li>
+        </ul>
+      </div>
+      <div class="cell">
+        <h4>Domain</h4>
+        <ul>
+          <li>Optical imaging</li>
+          <li>Research methods</li>
+          <li>Engineering operations</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Certification</p>
+    <h2>Recent coursework</h2>
+    <div class="certs">
+      <div class="cert">
+        <span class="title">Python for Data Science, AI &amp; Development</span>
+        <span class="issuer">IBM · 2026</span>
+      </div>
+      <div class="cert">
+        <span class="title">Data Visualization and Dashboards with Excel and Cognos</span>
+        <span class="issuer">IBM · 2026</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="wrap">
+    <p class="eyebrow">Contact</p>
+    <h2>Open to data analyst roles</h2>
+    <div class="links">
+      <a href="mailto:bijaya.basnet14@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/bijaya-b-2a73471b4" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/bijayabasnet14-sys" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Bijaya Basnet · Topeka, Kansas · Available on-site, hybrid, or remote
+  </div>
+</footer>
+
+<script>
+/* Two-source interference pattern — the fringes a Fourier holographic
+   microscope actually records. Redrawn slowly as the reference source drifts. */
+(function () {
+  const canvas = document.getElementById("fringe");
+  const ctx = canvas.getContext("2d", { willReadFrequently: false });
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  let w, h, img, buf;
+
+  function size() {
+    const scale = 0.34;                  // render small, scale up: cheap and soft
+    w = Math.max(2, Math.floor(canvas.clientWidth  * scale));
+    h = Math.max(2, Math.floor(canvas.clientHeight * scale));
+    canvas.width = w;
+    canvas.height = h;
+    img = ctx.createImageData(w, h);
+    buf = new Uint32Array(img.data.buffer);
+  }
+
+  function draw(t) {
+    const k = 0.55;                       // spatial frequency
+    const drift = Math.sin(t * 0.00013) * 0.35;
+
+    // object source and reference source
+    const ax = w * (0.22 + drift * 0.12), ay = h * 0.30;
+    const bx = w * (0.78 - drift * 0.10), by = h * (0.72 + drift * 0.06);
+
+    for (let y = 0; y < h; y++) {
+      for (let x = 0; x < w; x++) {
+        const da = Math.hypot(x - ax, y - ay);
+        const db = Math.hypot(x - bx, y - by);
+        // interference intensity, normalized 0..1
+        let v = (Math.cos((da - db) * k) + 1) * 0.5;
+        v = v * v;                        // sharpen the dark fringes
+        const g = 236 - v * 132;          // pale field, deep fringes
+        const bl = 246 - v * 118;
+        buf[y * w + x] = (255 << 24) | (bl << 16) | ((g - 4) << 8) | (g - 14);
+      }
+    }
+    ctx.putImageData(img, 0, 0);
+  }
+
+  function loop(t) { draw(t); requestAnimationFrame(loop); }
+
+  function init() {
+    size();
+    if (reduce) draw(0);
+    else requestAnimationFrame(loop);
+  }
+
+  let resizeTimer;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => { size(); if (reduce) draw(0); }, 180);
+  });
+
+  init();
+})();
+</script>
+
+</body>
+</html>
