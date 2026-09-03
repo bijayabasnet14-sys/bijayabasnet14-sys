@@ -3,4 +3,8 @@ __pycache__/
 *.pyc
 .ipynb_checkpoints/
 .env
-.venv/
+.venv/IBM Data Analytics Capstone Project (Stack Overflow Developer Survey Analysis)/files/survey_dataset_cleaned_v2 lab 13.csv
+IBM Data Analytics Capstone Project (Stack Overflow Developer Survey Analysis)/files/survey_dataset_cleaned_eda lab 12.csv
+IBM Data Analytics Capstone Project (Stack Overflow Developer Survey Analysis)/Final Dashboard/survey_data_updated.csv
+IBM Data Analytics Capstone Project (Stack Overflow Developer Survey Analysis)/survey_data_updated.csv
+IBM Data Analytics Capstone Project (Stack Overflow Developer Survey Analysis)/files/survey_dataset_cleaned_*.csv
