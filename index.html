@@ -26,6 +26,7 @@
   *{ box-sizing:border-box; margin:0; padding:0; }
 
   html{ scroll-behavior:smooth; }
+  [id]{ scroll-margin-top:5rem; }
 
   body{
     background:var(--field);
@@ -37,6 +38,41 @@
   }
 
   .wrap{ width:min(1080px, 92vw); margin-inline:auto; }
+
+  .site-nav{
+    position:fixed;
+    inset:0 0 auto 0;
+    z-index:10;
+    background:rgba(231,235,239,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--rule);
+  }
+  .site-nav .wrap{
+    min-height:3.6rem;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:1.5rem;
+  }
+  .brand{
+    font-family:var(--display);
+    font-weight:700;
+    color:var(--ink);
+    text-decoration:none;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+  }
+  .nav-links{ display:flex; flex-wrap:wrap; gap:.5rem 1.25rem; }
+  .nav-links a{
+    font-family:var(--mono);
+    font-size:.72rem;
+    color:var(--muted);
+    text-decoration:none;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+  }
+  .nav-links a:hover,
+  .nav-links a:focus-visible{ color:var(--hene); }
 
   /* ---------- eyebrow label ---------- */
   .eyebrow{
@@ -191,6 +227,53 @@
     padding-block:.28rem;
   }
 
+  /* ---------- project portfolio ---------- */
+  .projects{ display:grid; gap:1.25rem; }
+  .project{
+    border:1px solid var(--rule);
+    background:var(--paper);
+    padding:clamp(1.5rem, 4vw, 2.4rem);
+  }
+  .project-meta{
+    font-family:var(--mono);
+    font-size:.72rem;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--hene);
+  }
+  .project h3{
+    margin-top:.7rem;
+    font-family:var(--display);
+    font-size:clamp(1.45rem, 4vw, 2rem);
+    line-height:1.1;
+  }
+  .project p{ margin-top:1rem; max-width:65ch; color:var(--muted); }
+  .project-results{
+    display:grid;
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+    gap:1px;
+    margin-top:1.5rem;
+    background:var(--rule);
+    border:1px solid var(--rule);
+  }
+  .result{ background:var(--field); padding:1rem; }
+  .result strong{ display:block; font-family:var(--display); font-size:1.05rem; }
+  .result span{ display:block; margin-top:.2rem; color:var(--muted); font-size:.82rem; }
+  .project-links{ display:flex; flex-wrap:wrap; gap:.7rem; margin-top:1.5rem; }
+  .project-links a{
+    display:inline-block;
+    padding:.65rem .85rem;
+    border:1px solid var(--ink);
+    color:var(--ink);
+    font-family:var(--mono);
+    font-size:.72rem;
+    text-decoration:none;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+  }
+  .project-links a:hover,
+  .project-links a:focus-visible{ color:var(--paper); background:var(--hene); border-color:var(--hene); }
+
   /* ---------- certifications ---------- */
   .certs{ display:grid; gap:1px; background:var(--rule); border:1px solid var(--rule); }
   .cert{
@@ -236,6 +319,9 @@
     .entry{ grid-template-columns:1fr; gap:.5rem; }
     .entry .when{ padding-top:0; }
     .hero{ min-height:80vh; padding-block:5rem 3rem; }
+    .site-nav .wrap{ align-items:flex-start; padding-block:.85rem; }
+    .nav-links{ justify-content:flex-end; }
+    .project-results{ grid-template-columns:1fr; }
   }
 
   @media (prefers-reduced-motion:reduce){
@@ -245,7 +331,19 @@
 </head>
 <body>
 
-<header class="hero">
+<nav class="site-nav" aria-label="Primary navigation">
+  <div class="wrap">
+    <a class="brand" href="#top">BB</a>
+    <div class="nav-links">
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
   <canvas id="fringe" aria-hidden="true"></canvas>
   <div class="wrap">
     <p class="hero-tag">Data Analyst · Topeka, Kansas</p>
@@ -254,8 +352,8 @@
       <span class="surname">Basnet</span>
     </h1>
     <p class="thesis">
-      Physics taught me to be careful with a measurement. Two years as a data
-      analyst taught me to make it useful to people who never read the method.
+      I turn complex data into reliable reporting, clear dashboards, and practical
+      insights—grounded in a background in physics, mathematics, and research.
     </p>
     <p class="locus">
       <span>SQL</span><span>Python</span><span>Power BI</span>
@@ -278,7 +376,7 @@
   </div>
 </section>
 
-<section class="band alt">
+<section class="band alt" id="experience">
   <div class="wrap">
     <p class="eyebrow">Record</p>
     <h2>Where the work has been</h2>
@@ -302,9 +400,9 @@
           <h3>Data Analyst</h3>
           <p class="org">Intellesoft Systems · Remote</p>
           <p>
-            Data-driven projects supporting business and operational decisions.
-            Statistical analysis, Power BI reporting, and translating findings for
-            non-technical stakeholders.
+            Used SQL to extract and validate client data, investigated reporting
+            discrepancies, and developed recurring dashboards in Excel, Cognos,
+            and Power BI for technical and non-technical stakeholders.
           </p>
         </div>
       </article>
@@ -312,7 +410,7 @@
       <article class="entry">
         <div class="when">2019 — 2022</div>
         <div>
-          <h3>Research Assistant</h3>
+          <h3>Student Researcher</h3>
           <p class="org">Rossi Biophotonics Lab · Topeka, Kansas</p>
           <p>
             Biomedical imaging research using optical microscopy. Data collection,
@@ -323,7 +421,7 @@
       </article>
 
       <article class="entry">
-        <div class="when">2017 — 2021</div>
+        <div class="when">Completed 2022</div>
         <div>
           <h3>B.S. Physics, Mathematics minor</h3>
           <p class="org">Washburn University</p>
@@ -339,20 +437,50 @@
   </div>
 </section>
 
+<section class="band" id="projects">
+  <div class="wrap">
+    <p class="eyebrow">Selected work</p>
+    <h2>Projects built around real questions</h2>
+    <div class="projects">
+      <article class="project">
+        <p class="project-meta">IBM Data Analyst Capstone · 2026</p>
+        <h3>Stack Overflow Developer Survey Analysis</h3>
+        <p>
+          An end-to-end analysis of developer technology usage, future preferences,
+          and demographics. I collected and cleaned data in Python, transformed
+          multi-response survey fields in Google Sheets, and built a three-page
+          interactive dashboard in Looker Studio.
+        </p>
+        <div class="project-results" aria-label="Selected project findings">
+          <div class="result"><strong>JavaScript</strong><span>Leading current and desired language</span></div>
+          <div class="result"><strong>PostgreSQL</strong><span>Leading current and desired database</span></div>
+          <div class="result"><strong>AWS</strong><span>Leading cloud platform</span></div>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/bijayabasnet14-sys/bijayabasnet14-sys/tree/main/IBM%20Data%20Analytics%20Capstone%20Project%20(Stack%20Overflow%20Developer%20Survey%20Analysis)" target="_blank" rel="noopener">Project repository</a>
+          <a href="https://datastudio.google.com/reporting/3f870e80-7c7e-4e75-a936-3b14cf99c7a5" target="_blank" rel="noopener">Live dashboard</a>
+          <a href="https://docs.google.com/spreadsheets/d/1LILFEQpPUMz7QaDXLO3WLiEDMfq6RycoeBAUhnUL8lw/edit?usp=sharing" target="_blank" rel="noopener">Prepared data</a>
+          <a href="https://github.com/bijayabasnet14-sys/bijayabasnet14-sys/blob/main/IBM%20Data%20Analytics%20Capstone%20Project%20(Stack%20Overflow%20Developer%20Survey%20Analysis)/Presentation/IBM%20Capstone%20Project%20Final%20Presentation.pdf" target="_blank" rel="noopener">Presentation</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
 <section class="band">
   <div class="wrap">
     <p class="eyebrow">Instrument</p>
     <h2>Digital Fourier holographic microscope</h2>
     <p class="lede">
-      An ongoing project at Washburn University: designing and building a digital
-      Fourier holographic microscope for imaging, observation, and holographic
-      reconstruction. Optical alignment, image capture, and the analysis of what
-      comes off the sensor — a physics problem and a data problem at the same time.
+      At Washburn University, I helped design and build a digital Fourier
+      holographic microscope for imaging and holographic reconstruction. The work
+      combined optical alignment, LabVIEW-based image capture, and MATLAB and
+      ImageJ analysis—a physics problem and a data problem at the same time.
     </p>
   </div>
 </section>
 
-<section class="band alt">
+<section class="band alt" id="skills">
   <div class="wrap">
     <p class="eyebrow">Toolkit</p>
     <h2>What I work with</h2>
@@ -410,7 +538,7 @@
   </div>
 </section>
 
-<section class="contact">
+<section class="contact" id="contact">
   <div class="wrap">
     <p class="eyebrow">Contact</p>
     <h2>Open to data analyst roles</h2>
