@@ -37,8 +37,7 @@ I enjoy exploring unfamiliar datasets, discovering hidden relationships, forecas
 
 ## Featured Projects
 
-### IBM Data Analytics Capstone Project
-Stack Overflow Developer Survey Analysis
+### IBM Data Analytics Capstone Project (Stack Overflow Developer Survey Analysis)
 
 Analyzed developer technology usage, future technology preferences, and demographic trends using Stack Overflow survey data. Created dashboards and visualizations covering programming languages, databases, platforms, web frameworks, age groups, education levels, and geographic distribution.
 
