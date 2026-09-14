@@ -18,6 +18,8 @@ I first experienced the storytelling power of data while conducting biophotonics
 
 That experience shaped how I see data today. Data is more than a collection of numbers, measurements, or images—it is evidence left behind by an underlying process. An analyst’s role is to investigate that evidence, identify patterns and anomalies, and transform the findings into insights people can understand and use.
 
+My recent Kansas Medicaid project put that approach into practice with real public-sector data. I transformed ten years of annual Medical Assistance Reports from PDF files into analysis-ready datasets, validated the extracted figures, investigated changes in reporting structure, and analyzed how enrollment and expenditures changed from FY2017 through FY2026. The project reinforced my interest in using data to make complex public programs easier to understand.
+
 I enjoy exploring unfamiliar datasets, discovering hidden relationships, forecasting possible outcomes, and building clear visualizations. Whether an analysis reveals an emerging trend, an unexpected anomaly, or a concern hidden beneath summary figures, my goal is to understand what is happening, explain why it matters, and support better decisions.
 
 ---
@@ -37,6 +39,18 @@ I enjoy exploring unfamiliar datasets, discovering hidden relationships, forecas
 
 ## Featured Projects
 
+### Kansas Medicaid Spending & Enrollment Analysis | FY2017–FY2026
+
+Built a 10-year analysis of Kansas Medicaid enrollment and expenditures from annual Medical Assistance Reports. I developed a Python workflow to extract and structure data from PDF reports, validated monthly and annual figures, analyzed spending relative to enrollment, investigated category-of-service changes, and built an interactive Tableau dashboard.
+
+**Key findings:** FY2026 averaged **427,603 beneficiaries per month** and recorded **$5.85 billion in total expenditures**. From FY2017 to FY2026, total expenditures increased **68.6%** while average monthly beneficiaries ended approximately **0.8% below** the FY2017 level. Expenditure per beneficiary-month increased from **$670.98 to $1,139.87**.
+
+**Tools:** Python, Pandas, pdfplumber, Jupyter Notebook, Tableau, Git, and GitHub
+
+**Skills demonstrated:** PDF data extraction, data validation, multi-year trend analysis, expenditure analysis, category-of-service analysis, data quality investigation, dashboard development, and data storytelling
+
+[View Project Repository](https://github.com/bijayabasnet14-sys/bijayabasnet14-sys/tree/main/Kansas%20Medicaid%20Spending%20%26%20Enrollment%20Analysis) · [View Interactive Tableau Dashboard](https://public.tableau.com/app/profile/bijaya.basnet/viz/Kansas_Medicaid_Spending_Enrollment_Analysis_twbx/KansasMedicaidSpendingEnrollmentAnalysisFY2017FY2026)
+
 ### IBM Data Analytics Capstone Project (Stack Overflow Developer Survey Analysis)
 
 Analyzed developer technology usage, future technology preferences, and demographic trends using Stack Overflow survey data. Created dashboards and visualizations covering programming languages, databases, platforms, web frameworks, age groups, education levels, and geographic distribution.
@@ -44,14 +58,6 @@ Analyzed developer technology usage, future technology preferences, and demograp
 **Tools:** Python, Pandas, Excel, Google Looker Studio, and data visualization
 
 **Skills demonstrated:** Data cleaning, exploratory analysis, dashboard development, trend identification, and data storytelling
-
-### Kansas Medicaid Data Analysis — In Progress
-
-Analyzing approximately ten years of Kansas Medicaid data to examine changes in beneficiary counts, expenditures, population groups, capitation payments, and categories of service. The project aims to identify long-term patterns, unusual changes, and relationships between program participation and spending.
-
-**Tools:** Python, Pandas, Excel, SQL, and Power BI
-
-**Skills demonstrated:** Multi-year data preparation, validation, trend analysis, financial analysis, and visualization
 
 ### Data Analytics Portfolio — In Progress
 
