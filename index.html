@@ -36,7 +36,6 @@
   }
 
   *{ box-sizing:border-box; margin:0; padding:0; }
-
   html{ scroll-behavior:smooth; }
   [id]{ scroll-margin-top:5rem; }
 
@@ -97,7 +96,6 @@
   .theme-toggle:hover,
   .theme-toggle:focus-visible{ border-color:var(--hene); color:var(--hene); }
 
-  /* ---------- eyebrow label ---------- */
   .eyebrow{
     font-family:var(--mono);
     font-size:.7rem;
@@ -115,7 +113,6 @@
     background:var(--rule);
   }
 
-  /* ---------- hero ---------- */
   .hero{
     position:relative;
     min-height:76vh;
@@ -143,7 +140,6 @@
     color:var(--hene);
     margin-bottom:1.75rem;
   }
-
   .name{
     font-family:var(--display);
     font-weight:700;
@@ -154,7 +150,6 @@
   }
   .name span{ display:block; }
   .name .surname{ color:var(--hene); }
-
   .hero-headline{
     margin-top:1.5rem;
     max-width:22ch;
@@ -164,7 +159,6 @@
     font-weight:600;
     letter-spacing:-.01em;
   }
-
   .thesis{
     margin-top:2rem;
     max-width:47ch;
@@ -172,7 +166,6 @@
     line-height:1.5;
     color:var(--ink);
   }
-
   .locus{
     margin-top:2.5rem;
     font-family:var(--mono);
@@ -183,10 +176,8 @@
     gap:.4rem 1.5rem;
   }
 
-  /* ---------- generic section ---------- */
   .band{ padding-block:5.5rem; border-bottom:1px solid var(--rule); }
   .band.alt{ background:var(--paper); }
-
   .band h2{
     font-family:var(--display);
     font-weight:600;
@@ -196,12 +187,9 @@
     text-transform:uppercase;
     margin-block:1.5rem 2.5rem;
   }
-
   .lede{ max-width:60ch; color:var(--muted); font-size:1.05rem; }
 
-  /* ---------- timeline ---------- */
   .track{ display:grid; gap:0; }
-
   .entry{
     display:grid;
     grid-template-columns:8.5rem 1fr;
@@ -211,7 +199,6 @@
     align-items:start;
   }
   .entry:first-child{ border-top:none; }
-
   .entry .when{
     font-family:var(--mono);
     font-size:.78rem;
@@ -233,7 +220,6 @@
   }
   .entry p{ margin-top:.85rem; color:var(--muted); max-width:60ch; }
 
-  /* ---------- instrument panel (skills) ---------- */
   .panel{
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));
@@ -243,7 +229,6 @@
   }
   .cell{ background:var(--field); padding:1.75rem 1.5rem; }
   .band.alt .cell{ background:var(--paper); }
-
   .cell h4{
     font-family:var(--mono);
     font-size:.7rem;
@@ -260,7 +245,6 @@
     padding-block:.28rem;
   }
 
-  /* ---------- project portfolio ---------- */
   .projects{ display:grid; gap:1.25rem; }
   .project{
     border:1px solid var(--rule);
@@ -308,7 +292,6 @@
   .project-links a:hover,
   .project-links a:focus-visible{ color:var(--field-deep); background:var(--hene); border-color:var(--hene); }
 
-  /* ---------- certifications ---------- */
   .certs{ display:grid; gap:1px; background:var(--rule); border:1px solid var(--rule); }
   .cert{
     background:var(--field);
@@ -334,7 +317,6 @@
   .credential-link:hover,
   .credential-link:focus-visible{ color:var(--hene); }
 
-  /* ---------- contact ---------- */
   .contact{ padding-block:5.5rem 4rem; }
   .contact h2{ margin-bottom:2rem; }
   .links{ display:flex; flex-wrap:wrap; gap:1rem 2.5rem; }
@@ -350,7 +332,6 @@
   }
   .links a:hover,
   .links a:focus-visible{ color:var(--hene); border-color:var(--hene); }
-
   footer{
     padding-block:2rem 3rem;
     font-family:var(--mono);
@@ -358,7 +339,6 @@
     color:var(--muted);
     border-top:1px solid var(--rule);
   }
-
   :focus-visible{ outline:2px solid var(--hene); outline-offset:3px; }
 
   @media (max-width:640px){
@@ -517,6 +497,26 @@
     <h2>Projects built around real questions</h2>
     <div class="projects">
       <article class="project">
+        <p class="project-meta">Independent Analysis · 2026</p>
+        <h3>Kansas Medicaid Spending &amp; Enrollment Analysis</h3>
+        <p>
+          A 10-year analysis of Kansas Medicaid enrollment and expenditures using
+          annual Medical Assistance Reports from FY2017 through FY2026. I built a
+          Python workflow to extract and validate data from PDF reports, analyzed
+          spending relative to enrollment, and created an interactive Tableau dashboard.
+        </p>
+        <div class="project-results" aria-label="Selected Kansas Medicaid project findings">
+          <div class="result"><strong>427,603</strong><span>FY2026 average monthly beneficiaries</span></div>
+          <div class="result"><strong>$5.85B</strong><span>FY2026 total expenditures</span></div>
+          <div class="result"><strong>+68.6%</strong><span>Expenditure growth since FY2017</span></div>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/bijayabasnet14-sys/bijayabasnet14-sys/tree/main/Kansas%20Medicaid%20Spending%20%26%20Enrollment%20Analysis" target="_blank" rel="noopener">Project repository</a>
+          <a href="https://public.tableau.com/app/profile/bijaya.basnet/viz/Kansas_Medicaid_Spending_Enrollment_Analysis_twbx/KansasMedicaidSpendingEnrollmentAnalysisFY2017FY2026" target="_blank" rel="noopener">Live dashboard</a>
+        </div>
+      </article>
+
+      <article class="project">
         <p class="project-meta">IBM Data Analyst Capstone · 2026</p>
         <h3>IBM Data Analytics Capstone Project (Stack Overflow Developer Survey Analysis)</h3>
         <p>
@@ -660,7 +660,6 @@
 </footer>
 
 <script>
-/* Theme preference: dark by default, with an accessible user-controlled switch. */
 (function () {
   const root = document.documentElement;
   const toggle = document.getElementById("theme-toggle");
@@ -681,8 +680,6 @@
   });
 })();
 
-/* Two-source interference pattern: the fringes a Fourier holographic
-   microscope actually records. Redrawn slowly as the reference source drifts. */
 (function () {
   const canvas = document.getElementById("fringe");
   const ctx = canvas.getContext("2d", { willReadFrequently: false });
@@ -691,8 +688,8 @@
   let w, h, img, buf;
 
   function size() {
-    const scale = 0.34;                  // render small, scale up: cheap and soft
-    w = Math.max(2, Math.floor(canvas.clientWidth  * scale));
+    const scale = 0.34;
+    w = Math.max(2, Math.floor(canvas.clientWidth * scale));
     h = Math.max(2, Math.floor(canvas.clientHeight * scale));
     canvas.width = w;
     canvas.height = h;
@@ -701,11 +698,9 @@
   }
 
   function draw(t) {
-    const k = 0.55;                       // spatial frequency
+    const k = 0.55;
     const drift = Math.sin(t * 0.00013) * 0.35;
     const dark = document.documentElement.dataset.theme !== "light";
-
-    // object source and reference source
     const ax = w * (0.22 + drift * 0.12), ay = h * 0.30;
     const bx = w * (0.78 - drift * 0.10), by = h * (0.72 + drift * 0.06);
 
@@ -713,9 +708,8 @@
       for (let x = 0; x < w; x++) {
         const da = Math.hypot(x - ax, y - ay);
         const db = Math.hypot(x - bx, y - by);
-        // interference intensity, normalized 0..1
         let v = (Math.cos((da - db) * k) + 1) * 0.5;
-        v = v * v;                        // sharpen the dark fringes
+        v = v * v;
         const red = dark ? 7 + v * 25 : 222 - v * 118;
         const green = dark ? 17 + v * 78 : 232 - v * 128;
         const blue = dark ? 31 + v * 88 : 246 - v * 118;
